@@ -1,0 +1,37 @@
+@layer utilities {
+  .animated-gradient {
+    background: linear-gradient(
+      300deg,
+      #d5f4e6,
+      #a8e6cf,
+      #99d8c2,
+      #d5f4e6
+    );
+    background-size: 240% 240%;
+    @apply animate-gradient;
+  }
+
+  .card-gradient-1 {
+    background: linear-gradient(135deg, #ffd6e0, #ffeff4);
+    background-size: 200% 200%;
+    @apply animate-gradient;
+  }
+
+  .card-gradient-2 {
+    background: linear-gradient(135deg, #c4e3ff, #dcf0ff);
+    background-size: 200% 200%;
+    @apply animate-gradient;
+  }
+
+  .card-gradient-3 {
+    background: linear-gradient(135deg, #d5f4e6, #e8fff4);
+    background-size: 200% 200%;
+    @apply animate-gradient;
+  }
+
+  .card-gradient-4 {
+    background: linear-gradient(135deg, #ffecd6, #fff4e6);
+    background-size: 200% 200%;
+    @apply animate-gradient;
+  }
+}

@@ -1,0 +1,20 @@
+@layer components {
+  .card {
+    @apply rounded-xl shadow-lg backdrop-blur-sm transition-all duration-300
+           hover:translate-y-[-5px] hover:shadow-xl;
+  }
+
+  .animated-card {
+    @apply card animate-float animate-pulse-shadow;
+  }
+
+  .glass-card {
+    @apply bg-white/30 backdrop-blur-sm rounded-xl shadow-lg;
+  }
+
+  .skill-tag {
+    @apply px-3 py-1 rounded-full bg-white/30 backdrop-blur-sm
+           border border-white/20 text-gray-700 text-sm
+           hover:scale-110 transition-transform duration-200;
+  }
+}
