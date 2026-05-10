@@ -1,3 +1,4 @@
+
 import { TMDB_CONFIG } from '../config/tmdb';
 import { Movie, MovieDetails } from '../types/movie';
 
@@ -35,6 +36,31 @@ export const tmdbApi = {
       return {
         movies: [],
         totalPages: 0
+      };
+    }
+  },
+
+  // ADD THIS NEW FUNCTION
+  async searchMovies(query: string, page = 1) {
+    try {
+      const response = await fetch(
+        `${TMDB_CONFIG.BASE_URL}/search/movie?api_key=${TMDB_CONFIG.API_KEY}&query=${encodeURIComponent(query)}&page=${page}`
+      );
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      const data = await response.json();
+      return {
+        movies: data.results.map(formatMovieResponse),
+        totalPages: data.total_pages,
+        totalResults: data.total_results
+      };
+    } catch (error) {
+      console.error('Error searching movies:', error);
+      return {
+        movies: [],
+        totalPages: 0,
+        totalResults: 0
       };
     }
   },
