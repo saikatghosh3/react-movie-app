@@ -2,6 +2,9 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { HomePage } from './pages/HomePage';
 import { MovieDetailsPage } from './pages/MovieDetailsPage';
 import { GenrePage } from './pages/GenrePage';
+import { PrivacyPolicyPage } from './pages/PrivacyPolicyPage';
+import { TermsOfServicePage } from './pages/TermsOfServicePage';
+import { CookiePolicyPage } from './pages/CookiePolicyPage';
 import { Footer } from './components/Footer';
 // import { Header} from './components/Header';
 
@@ -15,6 +18,9 @@ export function App() {
             <Route path="/" element={<HomePage />} />
             <Route path="/movie/:id" element={<MovieDetailsPage />} />
             <Route path="/genre/:genreId" element={<GenrePage />} />
+            <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
+            <Route path="/terms-of-service" element={<TermsOfServicePage />} />
+            <Route path="/cookie-policy" element={<CookiePolicyPage />} />
             {/* <Route path="/search" element={<Header />} /> */}
           </Routes>
         </div>

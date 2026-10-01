@@ -2,7 +2,6 @@
 import { Search, Film, X } from 'lucide-react';
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { MovieCategories } from './MovieCategories';
 
 export const Header = () => {
   const [searchQuery, setSearchQuery] = useState('');
@@ -21,7 +20,7 @@ export const Header = () => {
 
   return (
     <header className="sticky top-0 z-50 bg-black/95 backdrop-blur-md border-b border-white/5">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
           
           {/* Logo */}
@@ -38,7 +37,7 @@ export const Header = () => {
               <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400 group-focus-within:text-red-400 transition-colors" />
               <input
                 type="text"
-                placeholder="Search movies, TV shows..."
+                placeholder="Search movies..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 className="w-full bg-white/10 text-white text-sm rounded-full 
@@ -52,15 +51,13 @@ export const Header = () => {
           {/* Right Section */}
           <div className="flex items-center gap-3">
             {/* Mobile Search Toggle */}
-            <button 
+            <button
               onClick={() => setShowMobileSearch(!showMobileSearch)}
+              aria-label={showMobileSearch ? 'Close search' : 'Open search'}
               className="md:hidden p-2.5 text-gray-400 hover:text-white hover:bg-white/10 rounded-xl transition-all"
             >
               {showMobileSearch ? <X className="w-5 h-5" /> : <Search className="w-5 h-5" />}
             </button>
-            
-            {/* Categories Dropdown */}
-            <MovieCategories />
           </div>
 
         </div>
@@ -72,7 +69,7 @@ export const Header = () => {
               <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
               <input
                 type="text"
-                placeholder="Search movies, TV shows..."
+                placeholder="Search movies..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 className="w-full bg-white/10 text-white text-sm rounded-xl 
